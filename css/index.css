@@ -112,6 +112,11 @@ button {
   border-radius: 15px;
 }
 
+button:hover {
+  cursor: pointer;
+  box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
 .loader {
   display: none;
   width: 50px;

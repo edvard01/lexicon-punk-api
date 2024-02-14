@@ -20,10 +20,12 @@ async function displayBeer(data) {
   const beer = await data[0];
   name.innerHTML = beer.name;
   if (beer.image_url === null) {
-    img.src = `assets\\360_F_222377066_6V7HVmRPYahGwDNf0ph2BkMk13JnonJl.jpg`;
+    img.src = `css\\assets\\360_F_222377066_6V7HVmRPYahGwDNf0ph2BkMk13JnonJl.jpg`;
   } else {
     img.src = beer.image_url;
   }
+
+  localStorage.setItem("beerId", beer.id);
 }
 
 getRandomBeer();
