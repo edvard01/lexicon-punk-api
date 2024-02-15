@@ -14,26 +14,38 @@ async function getBeer(id) {
 
 async function displayDetails(data) {
   const beer = await data[0];
+  const img = document.getElementById("beer-img");
   const name = document.getElementById("beer-name");
   const desc = document.getElementById("beer-desc");
   const abv = document.getElementById("abv");
   const volume = document.getElementById("volume");
   const ingredients = document.getElementById("ingredients");
   const hops = document.getElementById("hops");
-  const food = document.getElementById("food");
+  const food = document.getElementById("food-list");
   const brewerTips = document.getElementById("brewer-tips");
+  const yeast = document.getElementById("yeast");
 
+  img.src = beer.image_url;
   name.innerHTML = beer.name;
   desc.innerHTML = beer.description;
-  abv.innerHTML = beer.abv;
-  volume.innerHTML = `${beer.volume.value} ${beer.volume.unit}`;
+  abv.innerHTML += beer.abv;
+  volume.innerHTML += `${beer.volume.value} ${beer.volume.unit}`;
 
-  ingredients.innerHTML = beer.ingredients.malt.join(", ");
-  hops.innerHTML = beer.ingredients.hops.join(", ");
+  console.log(ingredients);
+  console.log(beer.ingredients.hops[0].name);
+  for (let j = 0; j < beer.ingredients.malt.length; j++) {
+    ingredients.innerHTML += `<li>${beer.ingredients.malt[j].amount.value} ${beer.ingredients.malt[j].amount.unit} ${beer.ingredients.malt[j].name}</li>`;
+  }
+
+  for (let k = 0; k < beer.ingredients.hops.length; k++) {
+    hops.innerHTML += `<li>${beer.ingredients.hops[k].amount.value} ${beer.ingredients.hops[k].amount.unit} ${beer.ingredients.hops[k].name}</li>`;
+  }
+
+  yeast.innerHTML += `<li>${beer.ingredients.yeast}</li>`;
 
   for (let i = 0; i < beer.food_pairing.length; i++) {
     if (i === beer.food_pairing.lengt - 1) {
-      food.innerHTML += beer.food_pairing[i];
+      food.innerHTML += `<li>${beer.food_pairing[i]}</li>`;
     } else {
       food.innerHTML += `${beer.food_pairing[i]} <br>`;
     }

@@ -23,35 +23,28 @@
       </header>
       <main>
         <div class="details-card">
-            <img src="css/assets/360_F_222377066_6V7HVmRPYahGwDNf0ph2BkMk13JnonJl.jpg" alt="image of beer">
+            <img src="css/assets/360_F_222377066_6V7HVmRPYahGwDNf0ph2BkMk13JnonJl.jpg" alt="image of beer" id="beer-img">
             <h3 id="beer-name"></h3>
             <p id="beer-desc"></p>
-            <table>
-              <tr>
-                <td>ABV</td>
-                <td id="abv"></td>
-              </tr>
-              <tr>
-                <td>Volume</td>
-                <td id="volume"></td>
-              </tr>
-              <tr>
-                <td>Ingredients</td>
-                <td id="ingredients"></td>
-              </tr>
-              <tr>
-                <td>Hops</td>
-                <td id="hops"></td>
-              </tr>
-              <tr>
-                <td>Food pairing</td>
-                <td id="food"></td>
-              </tr>
-              <tr>
-                <td>Brewers tips</td>
-                <td id="brewer-tips"></td>
-              </tr>
-            </table>
+            <div class="text-section">
+              <div class="details-panel">
+                <h4><b>Tips and trivia:</b></h4>
+                <p id="abv">ABV: </p>
+                <p id="volume">Volume: </p>
+                <p><b>This beer goes great with:</b></p>
+                <ul id="food-list"></ul>
+                <p><b>Finally, some brewers tips:</b></p>
+                <ul id="brewer-tips"></ul>
+              </div>
+              <div class="details-panel">
+                <p><b>Malts</b></p>
+                <ul id="ingredients"></ul>
+                <p><b>Hops</b></p>
+                <ul id="hops"></ul>
+                <p><b>Yeast</b></p>
+                <ul id="yeast"></ul>
+              </div>
+            </div>
         </div>
       </main>
     <script src="js/details.js"></script>
