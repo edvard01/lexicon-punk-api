@@ -1,0 +1,160 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #12372a;
+}
+
+.content-section {
+  margin: auto;
+  margin-top: 20px;
+  width: 1440px;
+  height: 1000px;
+  border-radius: 5px;
+  background-color: #12372a;
+}
+
+header {
+  background-color: #436850;
+  display: flex;
+  flex-direction: row;
+  height: 110px;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+header .nav {
+  width: 30%;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-evenly;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+  height: 100%;
+  width: 180px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-bottom: 3px solid transparent;
+}
+
+header a:hover {
+  border-bottom: 3px solid #12372a;
+}
+
+header a.active {
+  border-bottom: 3px solid #12372a;
+}
+
+header a p {
+  font-size: 32px;
+}
+
+main {
+  background-color: #fbfada;
+  height: 900px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.search-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+  padding: 50px;
+  width: 300px;
+  height: 90px;
+}
+
+.search-area .search-bar {
+  width: 250px;
+  height: 32px;
+  font-size: 22px;
+}
+
+.search-area button {
+  background-color: #12372a;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 12px;
+  color: white;
+}
+
+#toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #12372a;
+  color: white;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: 60px;
+  font-size: 17px;
+}
+
+#toast.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 60px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 60px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    top: 60px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    top: 60px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
