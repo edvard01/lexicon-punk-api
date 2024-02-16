@@ -25,7 +25,12 @@ async function displayDetails(data) {
   const brewerTips = document.getElementById("brewer-tips");
   const yeast = document.getElementById("yeast");
 
-  img.src = beer.image_url;
+  if (beer.image_url === null) {
+    img.src = `css\\assets\\360_F_222377066_6V7HVmRPYahGwDNf0ph2BkMk13JnonJl.jpg`;
+  } else {
+    img.src = beer.image_url;
+  }
+
   name.innerHTML = beer.name;
   desc.innerHTML = beer.description;
   abv.innerHTML += beer.abv;
