@@ -38,7 +38,7 @@ header .nav {
 
 header a {
   text-decoration: none;
-  color: black;
+  color: white;
   height: 100%;
   width: 180px;
 
@@ -83,6 +83,8 @@ main {
   width: 250px;
   height: 32px;
   font-size: 22px;
+  border-color: 3px solid #12372a;
+  border-radius: 8px;
 }
 
 .search-area button {
@@ -100,7 +102,8 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 20px;
 }
 
 .search-result .results .card {
@@ -120,7 +123,7 @@ main {
 }
 
 .search-result .results .card .beer-image img {
-  height: 324px;
+  height: 300px;
   width: auto;
   display: block;
 }
@@ -133,15 +136,46 @@ main {
   margin-left: 10px;
 }
 
-.search-result .results .card .content a {
-  text-decoration: none;
+.search-result .results .card .content p {
   color: black;
 }
 
+.search-result .results .card .content p:hover {
+  cursor: pointer;
+}
+
+.nav {
+  width: 300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav button {
+  margin-top: 30px;
+  padding: 10px 25px;
+  border: none;
+  background-color: #12372a;
+  color: white;
+  border-radius: 15px;
+}
+
+.nav button:hover:enabled {
+  background-color: #436850;
+  cursor: pointer;
+}
+
+.nav button:disabled {
+  background-color: #fbfada;
+  color: #fbfada;
+}
+
 .loader {
-  position: relative;
+  position: absolute;
   margin-top: auto;
   margin-bottom: auto;
+  top: 50%;
   left: 50%;
   margin-left: -25px;
   display: none;
